@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="IMBODY BE levert innovatieve smart gym systemen. All-in-one digitale weerstandstraining op slechts 1,4m² en 120 kg totale weerstand.">
+    <title>IMBODY BE - Smart Gym Systemen | België & Nederland</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+:root{
+    --white:#fff;--black:#000;
+    --g50:rgba(255,255,255,0.04);--g100:rgba(255,255,255,0.06);
+    --g200:rgba(255,255,255,0.10);--g300:rgba(255,255,255,0.20);
+    --g400:rgba(255,255,255,0.35);--g500:rgba(255,255,255,0.50);
+    --g600:rgba(255,255,255,0.65);--g700:rgba(255,255,255,0.80);
+    --accent:#25DFE6;--accent-dim:rgba(37,223,230,0.12);--accent-glow:rgba(37,223,230,0.25);
+    --card-bg:#111216;--card-border:rgba(255,255,255,0.08);
+    --r-sm:10px;--r-md:16px;--r-lg:24px;--r-full:50px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+.ctn{width:100%;max-width:480px;margin:0 auto;padding:0 20px;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,0.5);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--g100);padding:12px 0;transition:background .3s;}
+header.scrolled{background:rgba(0,0,0,0.92);}
+.h-inner{display:flex;align-items:center;justify-content:space-between;max-width:480px;margin:0 auto;padding:0 20px;}
+.logo-img{height:24px;width:auto;filter:brightness(10);}
+.h-right{display:flex;align-items:center;gap:12px;}
+.h-shop{background:var(--white);color:var(--black);font-size:12px;font-weight:700;padding:8px 18px;border-radius:var(--r-full);letter-spacing:.3px;text-transform:uppercase;}
+.nav-tog{background:none;border:1px solid var(--g200);color:#fff;cursor:pointer;font-size:18px;padding:6px 10px;line-height:1;border-radius:var(--r-sm);}
+.m-nav{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.98);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);z-index:999;padding:100px 32px 40px;flex-direction:column;align-items:center;}
+.m-nav.open{display:flex;}
+.m-nav a{font-size:28px;font-weight:300;letter-spacing:-.5px;color:var(--g600);padding:16px 0;border-bottom:1px solid var(--g100);width:100%;text-align:center;}
+.m-nav a:last-child{border-bottom:none;}
+.nav-x{position:absolute;top:16px;right:24px;background:none;border:none;color:var(--white);font-size:28px;cursor:pointer;padding:8px;}
+
+/* HERO — VIDEO BG */
+.hero{position:relative;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 32px;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;z-index:0;}
+.hero-bg video,.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.05) 20%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.88) 78%,#000 100%);}
+.hero-c{position:relative;z-index:2;padding:0 24px;}
+.h-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,0.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.12);padding:6px 14px;border-radius:var(--r-full);font-size:11px;font-weight:600;letter-spacing:.5px;color:var(--g700);margin-bottom:16px;}
+.h-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero h1{font-size:40px;font-weight:800;line-height:1.05;letter-spacing:-1.5px;margin-bottom:12px;}
+.hero h1 .thin{font-weight:300;color:var(--g500);}
+.hero-sub{font-size:15px;color:var(--g500);font-weight:400;line-height:1.5;margin-bottom:24px;max-width:320px;}
+.hero-btns{display:flex;gap:10px;margin-bottom:24px;}
+.btn-p{flex:1;display:flex;align-items:center;justify-content:center;background:var(--white);color:var(--black);padding:15px 24px;border-radius:var(--r-full);font-weight:700;font-size:14px;gap:6px;position:relative;overflow:hidden;transition:transform .15s;}
+.btn-p:active{transform:scale(.97);}
+.btn-p .ripple{position:absolute;border-radius:50%;background:rgba(0,0,0,0.12);transform:scale(0);animation:rip .6s ease-out;}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+.btn-o{flex:1;display:flex;align-items:center;justify-content:center;border:1px solid var(--g300);color:var(--white);padding:15px 24px;border-radius:var(--r-full);font-weight:500;font-size:14px;}
+.hero-proof{display:flex;align-items:center;gap:16px;}
+.p-stars{display:flex;gap:2px;}
+.p-stars svg{width:14px;height:14px;fill:var(--accent);}
+.p-rating{font-size:13px;font-weight:700;}
+.p-count{font-size:11px;color:var(--g400);}
+.p-div{width:1px;height:28px;background:var(--g200);}
+.p-inst{font-size:11px;color:var(--g400);line-height:1.3;}
+.p-inst strong{color:var(--g700);font-weight:700;font-size:13px;display:block;}
+
+/* TICKER */
+.ticker{padding:20px 0;overflow:hidden;border-bottom:1px solid var(--g100);background:rgba(255,255,255,0.02);}
+.t-track{display:flex;gap:40px;animation:scrl 25s linear infinite;width:max-content;}
+@keyframes scrl{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.t-item{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:12px;color:var(--g400);font-weight:500;}
+
+/* SECTION COMMON */
+.s-label{font-size:10px;text-transform:uppercase;letter-spacing:4px;color:var(--accent);font-weight:700;text-align:center;margin-bottom:10px;}
+.s-title{font-size:28px;font-weight:800;text-align:center;line-height:1.15;margin-bottom:6px;letter-spacing:-.8px;}
+.s-sub{font-size:13px;color:var(--g400);text-align:center;margin-bottom:36px;}
+
+/* PRODUCT BREAKDOWN — "Elk Detail. Doordacht." */
+.breakdown{padding:60px 0;background:linear-gradient(180deg,#000 0%,#080808 100%);}
+.bd-card{position:relative;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--card-border);background:var(--card-bg);}
+.bd-card img{width:100%;aspect-ratio:3/4;object-fit:cover;}
+.bd-labels{padding:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.bd-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(37,223,230,0.08);border:1px solid rgba(37,223,230,0.15);padding:6px 12px;border-radius:var(--r-full);font-size:11px;font-weight:600;color:var(--accent);}
+.bd-tag svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:2;}
+
+/* FEATURES */
+.features{padding:60px 0;}
+.f-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.f-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r-md);padding:20px 14px;text-align:center;position:relative;overflow:hidden;}
+.f-icon{width:44px;height:44px;margin:0 auto 12px;background:var(--accent-dim);border-radius:12px;display:flex;align-items:center;justify-content:center;}
+.f-icon svg{width:22px;height:22px;stroke:var(--accent);fill:none;stroke-width:1.8;}
+.f-card h3{font-size:13px;font-weight:700;margin-bottom:4px;}
+.f-card p{font-size:11px;color:var(--g400);line-height:1.5;}
+.f-hl{margin-top:12px;background:linear-gradient(135deg,rgba(37,223,230,0.06) 0%,rgba(255,255,255,0.03) 100%);border:1px solid rgba(37,223,230,0.12);border-radius:var(--r-md);padding:20px;display:flex;align-items:center;gap:16px;}
+.f-hl-icon{flex:0 0 52px;height:52px;background:var(--accent-dim);border:1px solid rgba(37,223,230,0.15);border-radius:14px;display:flex;align-items:center;justify-content:center;}
+.f-hl-icon svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:1.8;}
+.f-hl h3{font-size:14px;font-weight:700;margin-bottom:2px;}
+.f-hl p{font-size:12px;color:var(--g400);}
+
+/* STATS */
+.stats{padding:48px 0;border-top:1px solid var(--g100);border-bottom:1px solid var(--g100);}
+.st-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;text-align:center;}
+.st-num{font-size:32px;font-weight:900;letter-spacing:-1.5px;line-height:1;background:linear-gradient(180deg,var(--accent) 0%,rgba(37,223,230,0.5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.st-lbl{font-size:10px;color:var(--g400);margin-top:6px;text-transform:uppercase;letter-spacing:1px;font-weight:600;}
+
+/* MID CTA */
+.mid-cta{padding:32px 0;text-align:center;}
+.mid-cta-in{display:flex;align-items:center;justify-content:center;gap:8px;font-size:14px;color:var(--g500);}
+.mid-cta-in a{color:var(--accent);font-weight:700;}
+
+/* STEPS — "Jouw Lichaam. Jouw Data." */
+.steps-section{padding:60px 0;background:linear-gradient(180deg,#000 0%,#0a0a0c 100%);}
+.step-cards{display:flex;flex-direction:column;gap:16px;}
+.step-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r-lg);overflow:hidden;border-top:3px solid var(--accent);}
+.step-card img{width:100%;aspect-ratio:4/3;object-fit:cover;border-bottom:1px solid var(--card-border);}
+.step-body{padding:20px;}
+.step-num{font-size:48px;font-weight:900;color:rgba(37,223,230,0.15);line-height:1;margin-bottom:-8px;}
+.step-label{font-size:11px;color:var(--accent);font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
+.step-card h3{font-size:17px;font-weight:700;margin-bottom:4px;}
+.step-card p{font-size:13px;color:var(--g400);line-height:1.5;}
+.step-arrow{text-align:center;color:var(--accent);font-size:24px;padding:4px 0;}
+
+/* USE CASES */
+.use-cases{padding:60px 0;}
+.uc-cards{display:flex;flex-direction:column;gap:12px;}
+.uc-card{position:relative;border-radius:var(--r-lg);overflow:hidden;height:180px;}
+.uc-card img{width:100%;height:100%;object-fit:cover;}
+.uc-ov{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(0,0,0,0.85) 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:20px;z-index:1;}
+.uc-ov h3{font-size:17px;font-weight:700;margin-bottom:3px;}
+.uc-ov p{font-size:12px;color:var(--g500);line-height:1.4;}
+.uc-tag{position:absolute;top:14px;left:14px;z-index:2;background:rgba(0,0,0,0.5);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.1);padding:4px 12px;border-radius:var(--r-full);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+
+/* ACCESSORIES */
+.accessories{padding:60px 0;}
+.acc-scroll{display:flex;gap:14px;overflow-x:auto;padding:0 20px 20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.acc-scroll::-webkit-scrollbar{display:none;}
+.acc-card{flex:0 0 160px;scroll-snap-align:start;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r-md);overflow:hidden;transition:border-color .3s;}
+.acc-card.active{border-color:var(--accent-glow);}
+.acc-card img{width:100%;height:150px;object-fit:cover;background:linear-gradient(135deg,#1a2a2b 0%,#0f1a1b 100%);}
+.acc-nm{padding:10px 10px;font-size:12px;font-weight:600;color:var(--g600);text-align:center;}
+
+/* REVIEWS — photo cards with real images */
+.reviews{padding:60px 0;background:linear-gradient(180deg,#000 0%,#0a0a0c 50%,#000 100%);}
+.rev-scroll{display:flex;gap:14px;overflow-x:auto;padding:0 20px 16px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.rev-scroll::-webkit-scrollbar{display:none;}
+.rev-card{flex:0 0 240px;scroll-snap-align:start;border-radius:var(--r-lg);overflow:hidden;position:relative;height:360px;border:1px solid var(--card-border);}
+.rev-card img{width:100%;height:100%;object-fit:cover;}
+.rev-ov{position:absolute;bottom:0;left:0;right:0;padding:20px;background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.9) 100%);}
+.rev-title{font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:.3px;margin-bottom:8px;line-height:1.3;}
+.rev-stars{display:flex;gap:2px;}
+.rev-stars svg{width:14px;height:14px;fill:var(--accent);}
+
+/* COMPARISON TABLE */
+.compare{padding:60px 0;}
+.cmp-tbl{width:100%;border-collapse:collapse;font-size:12px;background:var(--card-bg);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--card-border);}
+.cmp-tbl th,.cmp-tbl td{padding:12px 10px;text-align:center;border-bottom:1px solid var(--card-border);}
+.cmp-tbl th{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--g400);font-weight:600;}
+.cmp-tbl th:last-child{color:var(--accent);background:rgba(37,223,230,0.05);}
+.cmp-tbl td:first-child{text-align:left;color:var(--g500);font-weight:500;font-size:11px;}
+.cmp-tbl td:last-child{color:var(--white);font-weight:700;background:rgba(37,223,230,0.03);}
+.cmp-tbl td{color:var(--g400);}
+.cmp-tbl tr:last-child td{border-bottom:none;}
+
+/* TRUST BADGES */
+.trust{padding:32px 0;overflow-x:auto;}
+.trust-row{display:flex;gap:12px;padding:0 20px;justify-content:center;flex-wrap:wrap;}
+.trust-badge{display:flex;align-items:center;gap:6px;background:var(--card-bg);border:1px solid var(--card-border);padding:8px 14px;border-radius:var(--r-full);white-space:nowrap;font-size:11px;font-weight:600;color:var(--g600);}
+.trust-badge svg{width:16px;height:16px;stroke:var(--accent);fill:none;stroke-width:2;}
+
+/* FAQ */
+.faq{padding:60px 0;}
+.faq-item{border-bottom:1px solid var(--g100);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:18px 0;cursor:pointer;font-size:14px;font-weight:600;color:var(--g700);-webkit-tap-highlight-color:transparent;}
+.faq-q svg{width:20px;height:20px;stroke:var(--g400);fill:none;stroke-width:2;transition:transform .3s;flex-shrink:0;margin-left:12px;}
+.faq-item.open .faq-q svg{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;padding:0 0;font-size:13px;color:var(--g400);line-height:1.7;}
+.faq-item.open .faq-a{max-height:200px;padding:0 0 18px;}
+
+/* PRICING + LEAD FORM */
+.pricing{padding:60px 0;}
+.pc{background:linear-gradient(145deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 100%);border:1px solid var(--g200);border-radius:var(--r-lg);padding:32px 24px;text-align:center;position:relative;overflow:hidden;}
+.pc::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(37,223,230,0.1) 0%,transparent 70%);animation:gp 8s ease-in-out infinite;}
+@keyframes gp{0%,100%{opacity:.5}50%{opacity:1}}
+.pc-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g400);font-weight:600;margin-bottom:8px;position:relative;}
+.pc-price{font-size:48px;font-weight:900;letter-spacing:-2px;position:relative;margin-bottom:4px;}
+.pc-price .cur{font-size:24px;font-weight:600;vertical-align:super;margin-right:2px;}
+.pc-note{font-size:12px;color:var(--g400);margin-bottom:24px;position:relative;}
+.pc-list{text-align:left;margin-bottom:0;position:relative;}
+.pc-list li{list-style:none;font-size:13px;color:var(--g600);padding:8px 0;border-bottom:1px solid var(--g100);display:flex;align-items:center;gap:10px;opacity:0;transform:translateX(-12px);transition:opacity .4s,transform .4s;}
+.pc-list li:last-child{border-bottom:none;}
+.pc-list li.rev{opacity:1;transform:translateX(0);}
+.pi-c{width:20px;height:20px;background:var(--accent-dim);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.pi-c svg{width:12px;height:12px;stroke:var(--accent);fill:none;stroke-width:3;}
+
+/* Lead form */
+.lf{position:relative;margin-top:24px;padding-top:24px;border-top:1px solid var(--g100);opacity:0;transform:translateY(16px);transition:opacity .5s ease .3s,transform .5s ease .3s;}
+.lf.rev{opacity:1;transform:translateY(0);}
+.lf h4{font-size:16px;font-weight:700;margin-bottom:4px;}
+.lf .lf-sub{font-size:12px;color:var(--g400);margin-bottom:16px;}
+.lf input{width:100%;padding:14px 16px;border-radius:var(--r-sm);border:1px solid var(--g200);background:rgba(255,255,255,0.04);color:var(--white);font-size:14px;font-family:inherit;margin-bottom:10px;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;}
+.lf input::placeholder{color:var(--g400);}
+.lf input:focus{border-color:var(--accent);background:rgba(37,223,230,0.03);box-shadow:0 0 0 3px rgba(37,223,230,0.08);}
+.f-row{display:flex;gap:10px;}
+.f-row input{flex:1;}
+.lf button{width:100%;padding:16px;border:none;border-radius:var(--r-full);background:var(--white);color:var(--black);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;position:relative;overflow:hidden;transition:transform .15s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.lf button:active{transform:scale(.97);}
+.f-note{font-size:10px;color:var(--g400);margin-top:10px;text-align:center;}
+.f-fields{transition:opacity .3s,transform .3s,max-height .5s ease;}
+.f-success{display:none;text-align:center;padding:20px 0;opacity:0;transform:scale(.9);transition:opacity .4s .1s,transform .4s .1s;}
+.lf.done .f-fields{opacity:0;transform:translateY(-8px);max-height:0;overflow:hidden;margin:0;padding:0;}
+.lf.done .f-success{display:block;opacity:1;transform:scale(1);}
+.f-success .s-ico{font-size:48px;margin-bottom:12px;animation:pop .4s cubic-bezier(.175,.885,.32,1.275);}
+@keyframes pop{0%{transform:scale(0)}100%{transform:scale(1)}}
+.f-success h4{font-size:18px;margin-bottom:4px;color:var(--accent);}
+.f-success p{font-size:13px;color:var(--g500);}
+
+/* WHATSAPP */
+.wa{position:fixed;bottom:80px;right:20px;z-index:950;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:wab 3s ease-in-out infinite;}
+.wa svg{width:28px;height:28px;fill:#fff;}
+@keyframes wab{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.wa-tip{position:fixed;bottom:142px;right:16px;z-index:950;background:var(--white);color:var(--black);padding:10px 16px;border-radius:var(--r-md);font-size:13px;font-weight:600;box-shadow:0 4px 20px rgba(0,0,0,0.3);opacity:0;transform:translateY(8px);transition:opacity .3s,transform .3s;pointer-events:none;white-space:nowrap;}
+.wa-tip::after{content:'';position:absolute;bottom:-6px;right:24px;width:12px;height:12px;background:var(--white);transform:rotate(45deg);}
+.wa-tip.show{opacity:1;transform:translateY(0);}
+
+/* STICKY BAR */
+.sticky{position:fixed;bottom:0;left:0;right:0;z-index:900;background:rgba(0,0,0,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--g100);padding:12px 20px;padding-bottom:max(12px,env(safe-area-inset-bottom));display:flex;align-items:center;justify-content:space-between;gap:12px;transform:translateY(100%);transition:transform .4s ease;}
+.sticky.vis{transform:translateY(0);}
+.sticky-p{font-size:18px;font-weight:800;letter-spacing:-.5px;}
+.sticky-n{font-size:10px;color:var(--g400);}
+.sticky-btn{background:var(--white);color:var(--black);padding:12px 24px;border-radius:var(--r-full);font-weight:700;font-size:13px;white-space:nowrap;}
+
+/* FOOTER */
+footer{padding:40px 0 100px;border-top:1px solid var(--g100);background:var(--black);}
+.ft-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.ft-logo{height:20px;filter:brightness(10);}
+.ft-soc{display:flex;gap:12px;}
+.ft-soc a{width:32px;height:32px;border-radius:50%;border:1px solid var(--g200);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.ft-tag{font-size:13px;color:var(--g400);margin-bottom:24px;}
+.ft-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px;}
+.ft-grid a{font-size:13px;color:var(--g500);padding:4px 0;}
+.ft-email{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--g500);margin-bottom:24px;}
+.ft-btm{border-top:1px solid var(--g100);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.ft-btm span,.ft-btm a{font-size:10px;color:var(--g400);}
+
+/* ANIMATIONS */
+.anim{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.anim.v{opacity:1;transform:translate(0);}
+.anim-l{opacity:0;transform:translateX(-28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.anim-l.v{opacity:1;transform:translate(0);}
+.anim-r{opacity:0;transform:translateX(28px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.anim-r.v{opacity:1;transform:translate(0);}
+.anim-s{opacity:0;transform:scale(.92);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.anim-s.v{opacity:1;transform:scale(1);}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+@media(prefers-reduced-motion:reduce){.anim,.anim-l,.anim-r,.anim-s{opacity:1!important;transform:none!important;transition:none!important}.pc-list li{opacity:1!important;transform:none!important}.lf{opacity:1!important;transform:none!important}.t-track{animation:none}}
+@media(min-width:600px){.ctn{max-width:560px}.hero h1{font-size:52px}.s-title{font-size:34px}.uc-card{height:220px}}
+    </style>
+</head>
+<body>
+
+<!-- ═══════ HEADER ═══════ -->
+<header id="hdr">
+    <div class="h-inner">
+        <a href="#"><img src="https://static.wixstatic.com/media/ab7bd6_cc377aaa10724f99b87c1a0b80df068d~mv2.png/v1/fill/w_200,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/imbody_logo_400px%201%20(2).png" alt="IMBODY" class="logo-img"></a>
+        <div class="h-right">
+            <a href="https://rokume225.wixstudio.com/website/shop" class="h-shop">Shop</a>
+            <button class="nav-tog" onclick="openNav()">☰</button>
+        </div>
+    </div>
+</header>
+<nav class="m-nav" id="mNav">
+    <button class="nav-x" onclick="closeNav()">✕</button>
+    <a href="#" onclick="closeNav()">Home</a>
+    <a href="#features" onclick="closeNav()">Product</a>
+    <a href="#use-cases" onclick="closeNav()">Toepassingen</a>
+    <a href="#pricing" onclick="closeNav()">Prijs</a>
+    <a href="https://rokume225.wixstudio.com/website/blog" onclick="closeNav()">Blog</a>
+    <a href="https://rokume225.wixstudio.com/website/shop" onclick="closeNav()">Shop</a>
+    <a href="mailto:info@imbodybe.com" onclick="closeNav()">Contact</a>
+</nav>
+
+<!-- ═══════ 1. HERO — VIDEO BG ═══════ -->
+<section class="hero" id="hero">
+    <div class="hero-bg">
+        <video autoplay muted loop playsinline poster="https://static.wixstatic.com/media/dfe424_0d6f4505522e474c9a02dd7a277ef587f000.jpg/v1/fill/w_960,h_1400,al_c,q_85,enc_avif,quality_auto/dfe424_0d6f4505522e474c9a02dd7a277ef587f000.jpg">
+            <source src="https://video.wixstatic.com/video/dfe424_0d6f4505522e474c9a02dd7a277ef587/480p/mp4/file.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="hero-c">
+        <div class="h-badge"><span class="dot"></span> 200+ installaties in BE & NL</div>
+        <h1>Train slimmer.<br><span class="thin">Geen compromis.</span></h1>
+        <p class="hero-sub">Professionele kracht op 1,4m². 120 kg digitale weerstand. Zonder gym, zonder abonnement.</p>
+        <div class="hero-btns">
+            <a href="#pricing" class="btn-p" onclick="ripple(event)">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                Boek demo
+            </a>
+            <a href="#pricing" class="btn-o">Bekijk prijs</a>
+        </div>
+        <div class="hero-proof">
+            <div>
+                <div class="p-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+                <div class="p-rating">4.8/5 — 150+ reviews</div>
+            </div>
+            <div class="p-div"></div>
+            <div class="p-inst"><strong>200+</strong>installaties</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 2. TICKER ═══════ -->
+<section class="ticker">
+    <div class="t-track">
+        <span class="t-item">🇩🇪 Duitse Marine</span><span class="t-item">🏥 Fysiotherapie</span><span class="t-item">🏠 Home Gyms</span><span class="t-item">🏢 Corporate Wellness</span><span class="t-item">💪 Personal Trainers</span><span class="t-item">🏋️ Studio\'s</span>
+        <span class="t-item">🇩🇪 Duitse Marine</span><span class="t-item">🏥 Fysiotherapie</span><span class="t-item">🏠 Home Gyms</span><span class="t-item">🏢 Corporate Wellness</span><span class="t-item">💪 Personal Trainers</span><span class="t-item">🏋️ Studio\'s</span>
+    </div>
+</section>
+
+<!-- ═══════ 3. PRODUCT BREAKDOWN — "Elk Detail. Doordacht." ═══════ -->
+<section class="breakdown">
+    <div class="ctn">
+        <p class="s-label anim">Product</p>
+        <h2 class="s-title anim d1">Elk Detail. Doordacht.</h2>
+        <p class="s-sub anim d2">Professionele kwaliteit. Compact ontwerp.</p>
+        <div class="bd-card anim-s d3">
+            <img src="https://static.wixstatic.com/media/dfe424_517866cc2aeb4763a38c11c2daada288~mv2.jpg/v1/fill/w_960,h_1280,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AISelect_20251019_223242_Chrome.jpg" alt="IMBODY Pro S" loading="lazy">
+            <div class="bd-labels">
+                <span class="bd-tag"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg> 43" HD Touchscreen</span>
+                <span class="bd-tag"><svg viewBox="0 0 24 24"><path d="M6.5 6.5h11v11h-11z"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg> 120 kg Digitale Weerstand</span>
+                <span class="bd-tag"><svg viewBox="0 0 24 24"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg> 1,4 m² Footprint</span>
+                <span class="bd-tag"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg> Verstelbare Armen</span>
+                <span class="bd-tag"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg> Workout Analytics</span>
+                <span class="bd-tag"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg> Digitale Precisieweerstand</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 4. FEATURES ═══════ -->
+<section class="features" id="features">
+    <div class="ctn">
+        <p class="s-label anim">Technologie</p>
+        <h2 class="s-title anim d1">Geavanceerde technologie.<br>Maximum performance.</h2>
+        <p class="s-sub anim d2">Alles wat je nodig hebt in één systeem</p>
+        <div class="f-grid">
+            <div class="f-card anim-l">
+                <div class="f-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+                <h3>Real-time weerstand</h3><p>Digitaal instelbaar — op de kilo nauwkeurig</p>
+            </div>
+            <div class="f-card anim-r d1">
+                <div class="f-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></div>
+                <h3>5 Trainingsmodi</h3><p>Standard, burnout, excentrisch en meer</p>
+            </div>
+            <div class="f-card anim-l d2">
+                <div class="f-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                <h3>43" HD Scherm</h3><p>Begeleide sessies, stats & entertainment</p>
+            </div>
+            <div class="f-card anim-r d3">
+                <div class="f-icon"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+                <h3>Geen abonnement</h3><p>Eens gekocht, altijd van jou</p>
+            </div>
+        </div>
+        <div class="f-hl anim d4">
+            <div class="f-hl-icon"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
+            <div><h3 class="f-hl">AI-Coaching op het scherm</h3><p class="f-hl">400+ begeleide workouts met automatische krachtmeting en progressie tracking</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 5. STATS ═══════ -->
+<section class="stats" id="statsS">
+    <div class="ctn">
+        <div class="st-grid">
+            <div class="anim"><div class="st-num" data-t="400" data-s="+">0</div><div class="st-lbl">Workouts</div></div>
+            <div class="anim d1"><div class="st-num" data-t="1.4" data-s="m²" data-d="1">0</div><div class="st-lbl">Footprint</div></div>
+            <div class="anim d2"><div class="st-num" data-t="120" data-s="kg">0</div><div class="st-lbl">Weerstand</div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 6. MID CTA ═══════ -->
+<div class="mid-cta anim"><div class="ctn"><div class="mid-cta-in">Benieuwd? <a href="#pricing">Boek een gratis demo →</a></div></div></div>
+
+<!-- ═══════ 7. STEPS — "Jouw Lichaam. Jouw Data." ═══════ -->
+<section class="steps-section">
+    <div class="ctn">
+        <p class="s-label anim">Hoe het werkt</p>
+        <h2 class="s-title anim d1">Jouw Lichaam. Jouw Data.<br>Jouw training.</h2>
+        <p class="s-sub anim d2">IMBODY past zich aan jou aan — niet andersom</p>
+        <div class="step-cards">
+            <div class="step-card anim-s">
+                <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/STAP-1-410x513.png" alt="Stap 1: Krachtmeting" loading="lazy">
+                <div class="step-body">
+                    <div class="step-num">01</div>
+                    <div class="step-label">Automatisch</div>
+                    <h3>Krachtmeting</h3>
+                    <p>Het systeem analyseert je kracht en stelt een gepersonaliseerde baseline in.</p>
+                </div>
+            </div>
+            <div class="step-arrow anim">↓</div>
+            <div class="step-card anim-s d1">
+                <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/STAP-2-410x513.png" alt="Stap 2: Workout op maat" loading="lazy">
+                <div class="step-body">
+                    <div class="step-num">02</div>
+                    <div class="step-label">Gepersonaliseerd</div>
+                    <h3>Workout op maat</h3>
+                    <p>AI genereert trainingen afgestemd op jouw doelen en niveau.</p>
+                </div>
+            </div>
+            <div class="step-arrow anim">↓</div>
+            <div class="step-card anim-s d2">
+                <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/STAP-3-410x513.png" alt="Stap 3: Progressie tracking" loading="lazy">
+                <div class="step-body">
+                    <div class="step-num">03</div>
+                    <div class="step-label">Automatisch</div>
+                    <h3>Progressie tracking</h3>
+                    <p>Monitor je vooruitgang en optimaliseer elke sessie met data.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 8. USE CASES ═══════ -->
+<section class="use-cases" id="use-cases">
+    <div class="ctn">
+        <p class="s-label anim">Toepassingen</p>
+        <h2 class="s-title anim d1">Afgestemd op elke ruimte.</h2>
+        <p class="s-sub anim d2">Van thuis tot kliniek tot kantoor</p>
+        <div class="uc-cards">
+            <div class="uc-card anim-s"><span class="uc-tag">Populair</span><img src="https://static.wixstatic.com/media/dfe424_7cc529f4d511441db6fc8a6ab41cf5a5~mv2.jpg/v1/fill/w_800,h_500,al_c,q_80,enc_avif,quality_auto/Thuisgebruiker%20Smart%20Gym.jpg" alt="Thuis" loading="lazy"><div class="uc-ov"><h3>Thuisgebruikers</h3><p>Volledige gym op 1,4m² — past in elke woonruimte</p></div></div>
+            <div class="uc-card anim-s d1"><span class="uc-tag">Professioneel</span><img src="https://static.wixstatic.com/media/dfe424_fc73717a1f41480084a76def08d1e652~mv2.jpg/v1/fill/w_800,h_500,al_c,q_80,enc_avif,quality_auto/REHAB.jpg" alt="Fysio" loading="lazy"><div class="uc-ov"><h3>Fysiotherapie & PT</h3><p>Excentrische modus voor nauwkeurige revalidatie</p></div></div>
+            <div class="uc-card anim-s d2"><span class="uc-tag">B2B</span><img src="https://static.wixstatic.com/media/dfe424_176d1e41f64145d5a884a9d1d77c2cda~mv2.jpg/v1/fill/w_800,h_500,al_c,q_80,enc_avif,quality_auto/FITNESS-CENTERS_jpeg.jpg" alt="Corporate" loading="lazy"><div class="uc-ov"><h3>Bedrijfs- & Kantoorwellness</h3><p>Compact systeem voor corporate wellness</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 9. MID CTA 2 ═══════ -->
+<div class="mid-cta anim"><div class="ctn"><div class="mid-cta-in">Past dit bij jou? <a href="#pricing">Bekijk de prijs →</a></div></div></div>
+
+<!-- ═══════ 10. ACCESSORIES ═══════ -->
+<section class="accessories">
+    <div class="ctn">
+        <p class="s-label anim">Inbegrepen</p>
+        <h2 class="s-title anim d1">Alles in één pakket.</h2>
+        <p class="s-sub anim d2">Professionele kwaliteit. Compact ontwerp.</p>
+    </div>
+    <div class="acc-scroll">
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_71d514ab883546aa88556b4f9c4f3bb6~mv2.png/v1/fill/w_400,h_474,al_c,q_85,enc_avif,quality_auto/Gemini_Generated_Image_g1i2t1g1i2t1g1i2.png" alt="BT Hendels" loading="lazy"><div class="acc-nm">BT Hendels</div></div>
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_bd148c6711ca4c69b7f65521e9111cd6~mv2.jpg/v1/fill/w_400,h_374,al_c,q_80,enc_avif,quality_auto/IMBODY%20T-Bar.jpg" alt="T-Bar" loading="lazy"><div class="acc-nm">T-Bar</div></div>
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_152659c1e4b641d09f188b15e4fe136a~mv2.jpg/v1/fill/w_400,h_404,al_c,q_80,enc_avif,quality_auto/IMBODY%20-%20Ankle%20Straps.jpg" alt="Enkel Straps" loading="lazy"><div class="acc-nm">Enkel Straps</div></div>
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_c5f7df4921f34174aab680ea7e252e63~mv2.jpg/v1/fill/w_400,h_368,al_c,q_80,enc_avif,quality_auto/IMBODY%20-%20Bankje.jpg" alt="Bench" loading="lazy"><div class="acc-nm">Bench</div></div>
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_efe6cafc99b94959ba5dbc7a701bc036~mv2.jpg/v1/fill/w_400,h_364,al_c,q_80,enc_avif,quality_auto/IMBODY%20-%20Bar.jpg" alt="Bar" loading="lazy"><div class="acc-nm">Bar</div></div>
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_67fb9f0fa9084236b5986c2b6f7df102~mv2.jpg/v1/fill/w_400,h_422,al_c,q_80,enc_avif,quality_auto/IMBODY%20-%20Tricep%20rope.jpg" alt="Tricep Rope" loading="lazy"><div class="acc-nm">Tricep Rope</div></div>
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_d44fde9bee03401bb72fe6487048819d~mv2.jpg/v1/fill/w_400,h_410,al_c,q_80,enc_avif,quality_auto/IMBODY%20Bluetooth%20controller.jpg" alt="BT Controller" loading="lazy"><div class="acc-nm">BT Controller</div></div>
+        <div class="acc-card"><img src="https://static.wixstatic.com/media/dfe424_cc67dac3747e45d5b4fdc180a4ef83ae~mv2.jpg/v1/fill/w_400,h_308,al_c,q_80,enc_avif,quality_auto/IMBODY%20-%20Roeibank.jpg" alt="Roeier" loading="lazy"><div class="acc-nm">Roeier</div></div>
+    </div>
+</section>
+
+<!-- ═══════ 11. REVIEWS — real photos ═══════ -->
+<section class="reviews">
+    <div class="ctn" style="padding-right:0">
+        <p class="s-label anim" style="padding-right:20px">Reviews</p>
+        <h2 class="s-title anim d1" style="padding-right:20px">Wat gebruikers zeggen.</h2>
+        <p class="s-sub" style="padding-right:20px;margin-bottom:28px"></p>
+    </div>
+    <div class="rev-scroll">
+        <div class="rev-card anim-s">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_1.jpg" alt="Hightech trifft Design." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Hightech trifft Design.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s d1">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_2.jpg" alt="Einfach aufstellen und loslegen." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Einfach aufstellen und loslegen.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s d2">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_3.jpg" alt="Mehr als nur ein Fitnessspiegel." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Mehr als nur ein Fitnessspiegel.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s d3">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_5.jpg" alt="Endlich kein Gerätechaos mehr." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Endlich kein Gerätechaos mehr.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_6.jpg" alt="Support, der wirklich hilft." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Support, der wirklich hilft.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_7.jpg" alt="Mein Homegym in einem Gerät!" loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Mein Homegym in einem Gerät!</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_8.jpg" alt="Mein täglicher Motivator." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Mein täglicher Motivator.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_9.jpg" alt="Motivation auf Knopfdruck." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Motivation auf Knopfdruck.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_10.jpg" alt="Kompakt, leise, effektiv." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Kompakt, leise, effektiv.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+        <div class="rev-card anim-s">
+            <img src="https://imbody.coreconcepts.digital/wp-content/uploads/2026/01/Screenshot_12.jpg" alt="Technologie, die motiviert." loading="lazy">
+            <div class="rev-ov">
+                <div class="rev-title">Technologie, die motiviert.</div>
+                <div class="rev-stars"><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg><svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.84L18 6.71l-4 3.9.94 5.5L10 13.39 5.06 16.1 6 10.6l-4-3.9 5.61-.87z"/></svg></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 12. COMPARISON TABLE ═══════ -->
+<section class="compare">
+    <div class="ctn">
+        <p class="s-label anim">Vergelijk</p>
+        <h2 class="s-title anim d1">Waarom IMBODY?</h2>
+        <p class="s-sub anim d2">Eén investering. Geen maandkosten. Geen compromis.</p>
+        <table class="cmp-tbl anim d3">
+            <thead><tr><th></th><th>Gym</th><th>Home gym</th><th>IMBODY Pro S</th></tr></thead>
+            <tbody>
+                <tr><td>Ruimte</td><td>20+ m²</td><td>3-5 m²</td><td>1,4 m²</td></tr>
+                <tr><td>Maandkosten</td><td>€50-100</td><td>€39-49</td><td>€0</td></tr>
+                <tr><td>Oefeningen</td><td>Per toestel</td><td>100-200</td><td>400+</td></tr>
+                <tr><td>AI-coaching</td><td>✗</td><td>Beperkt</td><td>✓</td></tr>
+                <tr><td>Excentrisch</td><td>✗</td><td>✗</td><td>✓</td></tr>
+                <tr><td>Abonnement</td><td>Verplicht</td><td>Vaak wel</td><td>Nooit</td></tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ═══════ 13. TRUST BADGES ═══════ -->
+<section class="trust">
+    <div class="trust-row">
+        <div class="trust-badge"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> 2 jaar garantie</div>
+        <div class="trust-badge"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg> Gratis levering</div>
+        <div class="trust-badge"><svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Geen abo</div>
+        <div class="trust-badge"><svg viewBox="0 0 24 24"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg> 14 dagen retour</div>
+    </div>
+</section>
+
+<!-- ═══════ 14. FAQ ═══════ -->
+<section class="faq">
+    <div class="ctn">
+        <p class="s-label anim">Veelgestelde vragen</p>
+        <h2 class="s-title anim d1">Nog vragen?</h2>
+        <p class="s-sub anim d2"></p>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Hoe groot is het systeem exact?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+            <div class="faq-a">De IMBODY Pro S heeft een footprint van slechts 1,4 m² (115 × 65 cm). Het past in elke woonkamer, slaapkamer, garage of kantoorruimte. De hoogte is 210 cm.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Is er een abonnement nodig?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+            <div class="faq-a">Nee. Alle workouts, AI-coaching en software-updates zijn inbegrepen in de aankoopprijs. Geen maandelijkse kosten, geen verborgen fees. Eens gekocht, altijd van jou.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Hoe wordt het geleverd en geïnstalleerd?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+            <div class="faq-a">Wij leveren gratis in heel België en Nederland. De installatie is inbegrepen — ons team komt bij je langs en zorgt dat alles operationeel is. Gemiddelde installatietijd: 45 minuten.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Wat is de garantie?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+            <div class="faq-a">Je krijgt 2 jaar volledige garantie op het systeem. Daarnaast bieden we lokale support vanuit België — geen callcenter in het buitenland.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+            <div class="faq-q">Kan ik het eerst uitproberen?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+            <div class="faq-a">Jazeker! Boek een gratis demo van 30 minuten. We komen bij je langs of je kunt online een sessie volgen. Vrijblijvend, geen verplichtingen.</div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 15. PRICING + LEAD FORM ═══════ -->
+<section class="pricing" id="pricing">
+    <div class="ctn">
+        <p class="s-label anim">Investering</p>
+        <h2 class="s-title anim d1">Eén systeem. Alles inbegrepen.</h2>
+        <p class="s-sub anim d2" style="margin-bottom:28px">Geen abonnement. Geen verborgen kosten.</p>
+        <div class="pc" id="priceCard">
+            <div class="pc-label">IMBODY Pro S</div>
+            <div class="pc-price"><span class="cur">€</span>4.549</div>
+            <div class="pc-note">Incl. BTW, levering & installatie</div>
+            <ul class="pc-list" id="pcList">
+                <li><span class="pi-c"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> IMBODY Pro S systeem</li>
+                <li><span class="pi-c"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> 43" HD touchscreen</li>
+                <li><span class="pi-c"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Alle accessoires inbegrepen</li>
+                <li><span class="pi-c"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> 400+ begeleide workouts</li>
+                <li><span class="pi-c"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> AI-coaching & krachtmeting</li>
+                <li><span class="pi-c"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Levering & installatie BE/NL</li>
+                <li><span class="pi-c"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> Garantie & lokale support</li>
+            </ul>
+            <div class="lf" id="leadForm">
+                <div class="f-fields">
+                    <h4>Boek een gratis demo</h4>
+                    <p class="lf-sub">30 minuten — vrijblijvend — bij jou of online</p>
+                    <div class="f-row">
+                        <input type="text" name="firstName" placeholder="Voornaam" required>
+                        <input type="text" name="lastName" placeholder="Achternaam" required>
+                    </div>
+                    <input type="email" name="email" placeholder="E-mailadres" required>
+                    <input type="tel" name="phone" placeholder="Telefoon (optioneel)">
+                    <button type="button" onclick="submitForm()">
+                        Boek mijn demo
+                        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <p class="f-note">🔒 Geen spam. Binnen 24u bevestiging.</p>
+                </div>
+                <div class="f-success">
+                    <div class="s-ico">✅</div>
+                    <h4>Demo aangevraagd!</h4>
+                    <p>We nemen binnen 24 uur contact op om een moment in te plannen.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════ 16. FOOTER ═══════ -->
+<footer>
+    <div class="ctn">
+        <div class="ft-top">
+            <img src="https://static.wixstatic.com/media/ab7bd6_cc377aaa10724f99b87c1a0b80df068d~mv2.png/v1/fill/w_200,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/imbody_logo_400px%201%20(2).png" alt="IMBODY" class="ft-logo">
+            <div class="ft-soc"><a href="#">📷</a><a href="#">💼</a><a href="#">🎵</a></div>
+        </div>
+        <p class="ft-tag">Smart gym systemen in België en Nederland</p>
+        <div class="ft-grid">
+            <a href="#">Home</a><a href="https://rokume225.wixstudio.com/website/product">Product</a>
+            <a href="https://rokume225.wixstudio.com/website/shop">Shop</a><a href="https://rokume225.wixstudio.com/website/demo">Demo</a>
+            <a href="https://rokume225.wixstudio.com/website/blog">Blog</a><a href="mailto:info@imbodybe.com">Contact</a>
+        </div>
+        <p class="ft-email">✉️ info@imbodybe.com</p>
+        <div class="ft-btm">
+            <span>© 2025 IMBODY BE</span>
+            <div style="display:flex;gap:12px"><a href="#">Privacy</a><a href="#">Voorwaarden</a><a href="#">Cookies</a></div>
+        </div>
+    </div>
+</footer>
+
+<!-- ═══════ STICKY BAR ═══════ -->
+<div class="sticky" id="stickyBar">
+    <div><div class="sticky-p">€4.549</div><div class="sticky-n">Incl. BTW & installatie</div></div>
+    <a href="#pricing" class="sticky-btn">Boek demo →</a>
+</div>
+
+<!-- ═══════ WHATSAPP ═══════ -->
+<div class="wa-tip" id="waTip">💬 Vraag? Chat via WhatsApp</div>
+<a href="https://wa.me/32XXXXXXXXX?text=Hallo%2C%20ik%20heb%20interesse%20in%20de%20IMBODY%20Pro%20S.%20Kan%20ik%20meer%20info%20krijgen%3F" target="_blank" rel="noopener" class="wa" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.132 6.742 3.052 9.376L1.054 31.4l6.26-1.964C9.87 31.076 12.832 32 16.004 32 24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.342 22.616c-.396 1.116-2.316 2.136-3.192 2.268-.876.132-2.004.192-3.228-.204-.744-.24-1.704-.564-2.928-1.104-5.148-2.268-8.508-7.476-8.76-7.824-.252-.348-2.064-2.748-2.064-5.244s1.308-3.72 1.776-4.224c.468-.504.984-.624 1.32-.624.336 0 .66 0 .96.012.3.012.708-.12 1.104.84.396.96 1.356 3.3 1.476 3.54.12.24.192.528.036.852-.156.324-.24.528-.468.804s-.48.624-.684.84c-.228.228-.468.48-.204.936.264.456 1.188 1.956 2.544 3.168 1.74 1.548 3.216 2.028 3.672 2.256.456.228.72.192.984-.12.264-.312 1.14-1.332 1.44-1.788.3-.456.612-.384 1.02-.228.408.156 2.616 1.236 3.06 1.464.456.228.756.336.864.528.12.18.12 1.068-.276 2.184z"/></svg>
+</a>
+
+<!-- ═══════ JS ═══════ -->
+<script>
+function openNav(){document.getElementById('mNav').classList.add('open');document.body.style.overflow='hidden';}
+function closeNav(){document.getElementById('mNav').classList.remove('open');document.body.style.overflow='';}
+
+// Header
+window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('scrolled',scrollY>60);},{passive:true});
+
+// Sticky bar
+const sObs=new IntersectionObserver(([e])=>{document.getElementById('stickyBar').classList.toggle('vis',!e.isIntersecting)},{threshold:0});
+sObs.observe(document.querySelector('.hero'));
+
+// Scroll animations
+const aObs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('v');aObs.unobserve(el.target);}});},{threshold:.1,rootMargin:'0px 0px -30px 0px'});
+document.querySelectorAll('.anim,.anim-l,.anim-r,.anim-s').forEach(el=>aObs.observe(el));
+
+// Counter
+let cDone=false;
+const cObs=new IntersectionObserver(([e])=>{if(e.isIntersecting&&!cDone){cDone=true;document.querySelectorAll('.st-num[data-t]').forEach(el=>{const t=parseFloat(el.dataset.t),s=el.dataset.s||'',d=el.dataset.d?parseInt(el.dataset.d):0,dur=1500,st=performance.now();function u(n){const p=Math.min((n-st)/dur,1),ez=1-Math.pow(1-p,3),v=t*ez;el.textContent=d?v.toFixed(d).replace('.',',')+s:Math.round(v)+s;if(p<1)requestAnimationFrame(u);}requestAnimationFrame(u);});}},{threshold:.3});
+cObs.observe(document.getElementById('statsS'));
+
+// Pricing stagger
+let pDone=false;
+const pObs=new IntersectionObserver(([e])=>{if(e.isIntersecting&&!pDone){pDone=true;document.querySelectorAll('#pcList li').forEach((li,i)=>{setTimeout(()=>li.classList.add('rev'),i*100);});setTimeout(()=>{document.getElementById('leadForm').classList.add('rev');},800);}},{threshold:.2});
+pObs.observe(document.getElementById('priceCard'));
+
+// Video
+function playVideo(){const v=document.getElementById('demoVideo'),o=document.getElementById('videoOverlay');if(v.paused){v.play();o.classList.add('hidden');v.controls=true;}}
+document.getElementById('demoVideo')?.addEventListener('ended',function(){document.getElementById('videoOverlay')?.classList.remove('hidden');this.controls=false;});
+
+// Ripple
+function ripple(e){const b=e.currentTarget,r=document.createElement('span');r.classList.add('ripple');const rc=b.getBoundingClientRect(),sz=Math.max(rc.width,rc.height);r.style.width=r.style.height=sz+'px';r.style.left=(e.clientX||0)-rc.left-sz/2+'px';r.style.top=(e.clientY||0)-rc.top-sz/2+'px';b.appendChild(r);setTimeout(()=>r.remove(),600);}
+
+// Form
+function submitForm(){const f=document.getElementById('leadForm'),ins=f.querySelectorAll('input'),d={};let ok=true;ins.forEach(i=>{d[i.name]=i.value;if(i.required&&!i.value.trim()){i.style.borderColor='#ff4444';ok=false;}else i.style.borderColor='';});if(!ok)return;f.classList.add('done');console.log('Lead:',d);}
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
+
+// WhatsApp tooltip
+setTimeout(()=>{const t=document.getElementById('waTip');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),4000);},3000);
+
+// FAQ toggle
+function toggleFaq(el){el.classList.toggle('open');}
+
+// Acc scroll highlight
+const as=document.querySelector('.acc-scroll');
+if(as)as.addEventListener('scroll',()=>{const cs=as.querySelectorAll('.acc-card'),ctr=as.scrollLeft+as.offsetWidth/2;cs.forEach(c=>{c.classList.toggle('active',c.offsetLeft<ctr&&c.offsetLeft+c.offsetWidth>ctr);});},{passive:true});
+</script>
+</body>
+</html>

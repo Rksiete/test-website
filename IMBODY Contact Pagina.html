@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Neem contact op met IMBODY BE. Vragen over de IMBODY Pro S, bestellingen of samenwerkingen? We reageren binnen 24 uur.">
+    <meta property="og:title" content="Contact — IMBODY BE">
+    <meta property="og:description" content="Vragen over de IMBODY Pro S? Neem contact op via formulier, WhatsApp of telefoon.">
+    <title>Contact — IMBODY BE | Smart Gym Systemen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+:root{
+    --white:#fff;--black:#000;
+    --g50:rgba(255,255,255,0.04);--g100:rgba(255,255,255,0.06);
+    --g200:rgba(255,255,255,0.10);--g300:rgba(255,255,255,0.20);
+    --g400:rgba(255,255,255,0.35);--g500:rgba(255,255,255,0.50);
+    --g600:rgba(255,255,255,0.65);--g700:rgba(255,255,255,0.80);
+    --accent:#25DFE6;--accent-dim:rgba(37,223,230,0.12);
+    --card-bg:#111216;--card-border:rgba(255,255,255,0.08);
+    --r-sm:10px;--r-md:16px;--r-lg:24px;--r-full:50px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--black);color:var(--white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;text-decoration:none;}
+.ctn{width:100%;max-width:480px;margin:0 auto;padding:0 20px;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(0,0,0,0.85);backdrop-filter:blur(24px) saturate(180%);-webkit-backdrop-filter:blur(24px) saturate(180%);border-bottom:1px solid var(--g100);padding:12px 0;}
+.h-inner{display:flex;align-items:center;justify-content:space-between;max-width:480px;margin:0 auto;padding:0 20px;}
+.logo-img{height:24px;width:auto;filter:brightness(10);}
+.h-right{display:flex;align-items:center;gap:12px;}
+.h-shop{background:var(--white);color:var(--black);font-size:12px;font-weight:700;padding:8px 18px;border-radius:var(--r-full);letter-spacing:.3px;text-transform:uppercase;}
+.nav-tog{background:none;border:1px solid var(--g200);color:#fff;cursor:pointer;font-size:18px;padding:6px 10px;line-height:1;border-radius:var(--r-sm);}
+.m-nav{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.98);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);z-index:999;padding:100px 32px 40px;flex-direction:column;align-items:center;}
+.m-nav.open{display:flex;}
+.m-nav a{font-size:24px;font-weight:300;color:var(--g600);padding:14px 0;border-bottom:1px solid var(--g100);width:100%;text-align:center;}
+.m-nav a:last-child{border-bottom:none;}
+.m-nav .nav-group-label{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--g400);font-weight:600;padding:20px 0 4px;width:100%;text-align:center;border-bottom:none;}
+.nav-x{position:absolute;top:16px;right:24px;background:none;border:none;color:var(--white);font-size:28px;cursor:pointer;padding:8px;}
+
+/* PAGE HERO */
+.page-hero{padding:80px 0 32px;text-align:center;position:relative;}
+.page-hero::before{content:'';position:absolute;top:20px;left:50%;transform:translateX(-50%);width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(37,223,230,0.05) 0%,transparent 70%);pointer-events:none;}
+.page-hero h1{font-size:32px;font-weight:800;letter-spacing:-1px;margin-bottom:8px;position:relative;}
+.page-hero p{font-size:15px;color:var(--g500);max-width:340px;margin:0 auto;line-height:1.5;position:relative;}
+
+/* DIRECT CONTACT OPTIONS */
+.contact-options{padding:24px 0 40px;}
+.co-grid{display:flex;flex-direction:column;gap:10px;}
+.co-card{display:flex;align-items:center;gap:14px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r-md);padding:16px;transition:border-color .2s;}
+.co-card:active{border-color:var(--g300);}
+.co-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:20px;}
+.co-icon.email{background:var(--accent-dim);}
+.co-icon.phone{background:rgba(59,130,246,0.12);}
+.co-icon.whatsapp{background:rgba(37,211,102,0.12);}
+.co-text h3{font-size:14px;font-weight:700;margin-bottom:2px;}
+.co-text p{font-size:13px;color:var(--g400);}
+.co-text .co-value{color:var(--g700);font-weight:500;}
+
+/* CONTACT FORM */
+.contact-form{padding:0 0 48px;}
+.cf-card{background:linear-gradient(145deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0.02) 100%);border:1px solid var(--g200);border-radius:var(--r-lg);padding:28px 20px;position:relative;overflow:hidden;}
+.cf-card::before{content:'';position:absolute;top:-40px;right:-40px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,rgba(37,223,230,0.08) 0%,transparent 70%);}
+.cf-card h2{font-size:18px;font-weight:700;margin-bottom:4px;position:relative;}
+.cf-card .cf-sub{font-size:13px;color:var(--g400);margin-bottom:20px;position:relative;}
+
+.cf-card label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1px;color:var(--g400);margin-bottom:6px;margin-top:14px;}
+.cf-card label:first-of-type{margin-top:0;}
+.cf-card input,.cf-card select,.cf-card textarea{width:100%;padding:14px 16px;border-radius:var(--r-sm);border:1px solid var(--g200);background:rgba(255,255,255,0.04);color:var(--white);font-size:16px;font-family:inherit;outline:none;transition:border-color .3s,background .3s,box-shadow .3s;-webkit-appearance:none;appearance:none;}
+.cf-card input::placeholder,.cf-card textarea::placeholder{color:var(--g400);}
+.cf-card input:focus,.cf-card select:focus,.cf-card textarea:focus{border-color:var(--accent);background:rgba(37,223,230,0.03);box-shadow:0 0 0 3px rgba(37,223,230,0.08);}
+.cf-card select{color:var(--g400);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2325DFE6' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px;}
+.cf-card select option{background:#111;color:#fff;}
+.cf-card select:valid{color:var(--white);}
+.cf-card textarea{resize:vertical;min-height:120px;line-height:1.5;}
+.cf-card button{width:100%;padding:16px;margin-top:20px;border:none;border-radius:var(--r-full);background:var(--white);color:var(--black);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:transform .15s;display:flex;align-items:center;justify-content:center;gap:8px;}
+.cf-card button:active{transform:scale(.97);}
+.cf-note{font-size:11px;color:var(--g400);margin-top:12px;text-align:center;position:relative;}
+
+/* Success state */
+.cf-card .f-fields{transition:opacity .3s,max-height .5s ease;}
+.cf-card .f-success{display:none;text-align:center;padding:20px 0;}
+.cf-card.done .f-fields{opacity:0;max-height:0;overflow:hidden;padding:0;margin:0;}
+.cf-card.done .f-success{display:block;animation:fadeUp .5s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.f-success .s-ico{font-size:56px;margin-bottom:16px;}
+.f-success h3{font-size:22px;font-weight:800;margin-bottom:4px;color:var(--accent);}
+.f-success p{font-size:14px;color:var(--g500);line-height:1.5;}
+
+/* QUICK LINKS */
+.quick-links{padding:0 0 48px;}
+.ql-title{font-size:16px;font-weight:700;margin-bottom:16px;text-align:center;color:var(--g600);}
+.ql-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.ql-card{display:flex;flex-direction:column;align-items:center;gap:8px;background:var(--card-bg);border:1px solid var(--card-border);border-radius:var(--r-md);padding:20px 12px;text-align:center;transition:border-color .2s;}
+.ql-card:active{border-color:var(--g300);}
+.ql-card .ql-ico{font-size:24px;margin-bottom:4px;}
+.ql-card h3{font-size:13px;font-weight:700;}
+.ql-card p{font-size:11px;color:var(--g400);line-height:1.4;}
+
+/* WHATSAPP */
+.wa{position:fixed;bottom:24px;right:20px;z-index:950;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.4);animation:wab 3s ease-in-out infinite;}
+.wa svg{width:28px;height:28px;fill:#fff;}
+@keyframes wab{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+
+/* FOOTER */
+footer{padding:40px 0 32px;border-top:1px solid var(--g100);}
+.ft-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px;}
+.ft-logo{height:20px;filter:brightness(10);}
+.ft-soc{display:flex;gap:12px;}
+.ft-soc a{width:32px;height:32px;border-radius:50%;border:1px solid var(--g200);display:flex;align-items:center;justify-content:center;font-size:14px;}
+.ft-tag{font-size:13px;color:var(--g400);margin-bottom:24px;}
+.ft-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:24px;}
+.ft-grid a{font-size:12px;color:var(--g500);padding:4px 0;}
+.ft-email{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--g500);margin-bottom:24px;}
+.ft-btm{border-top:1px solid var(--g100);padding-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.ft-btm span,.ft-btm a{font-size:10px;color:var(--g400);}
+
+/* ANIMATIONS */
+.anim{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.25,.46,.45,.94),transform .7s cubic-bezier(.25,.46,.45,.94);}
+.anim.v{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){.anim{opacity:1!important;transform:none!important;transition:none!important}}
+@media(min-width:600px){.ctn{max-width:560px}.page-hero h1{font-size:40px}}
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="h-inner">
+        <a href="https://rokume225.wixstudio.com/website"><img src="https://static.wixstatic.com/media/ab7bd6_cc377aaa10724f99b87c1a0b80df068d~mv2.png/v1/fill/w_200,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/imbody_logo_400px%201%20(2).png" alt="IMBODY" class="logo-img"></a>
+        <div class="h-right">
+            <a href="https://rokume225.wixstudio.com/website/shop" class="h-shop">Shop</a>
+            <button class="nav-tog" onclick="openNav()">☰</button>
+        </div>
+    </div>
+</header>
+<nav class="m-nav" id="mNav">
+    <button class="nav-x" onclick="closeNav()">✕</button>
+    <a href="https://rokume225.wixstudio.com/website" onclick="closeNav()">Home</a>
+    <span class="nav-group-label">Professionals</span>
+    <a href="#" onclick="closeNav()">Kinesisten & Zorg</a>
+    <a href="#" onclick="closeNav()">Fitness & PT</a>
+    <a href="#" onclick="closeNav()">Bedrijven</a>
+    <a href="https://rokume225.wixstudio.com/website/shop" onclick="closeNav()">Shop</a>
+    <a href="https://rokume225.wixstudio.com/website/blog" onclick="closeNav()">Blog</a>
+    <a href="https://rokume225.wixstudio.com/website/demo" onclick="closeNav()">Demo</a>
+    <a href="mailto:info@imbodybe.com" onclick="closeNav()">Contact</a>
+</nav>
+
+<!-- 1. PAGE HERO -->
+<section class="page-hero">
+    <div class="ctn">
+        <h1 class="anim">Neem contact op</h1>
+        <p class="anim d1">Vragen over het product, een bestelling of een samenwerking? We horen graag van je.</p>
+    </div>
+</section>
+
+<!-- 2. DIRECT CONTACT OPTIONS -->
+<section class="contact-options">
+    <div class="ctn">
+        <div class="co-grid">
+            <a href="mailto:info@imbodybe.com" class="co-card anim d1">
+                <div class="co-icon email">✉️</div>
+                <div class="co-text">
+                    <h3>E-mail</h3>
+                    <p class="co-value">info@imbodybe.com</p>
+                    <p>Reactie binnen 24 uur</p>
+                </div>
+            </a>
+            <a href="tel:+32475724889" class="co-card anim d2">
+                <div class="co-icon phone">📞</div>
+                <div class="co-text">
+                    <h3>Bel ons</h3>
+                    <p class="co-value">+32 475 72 48 89</p>
+                    <p>Ma-vr, 9:00 - 19:00</p>
+                </div>
+            </a>
+            <a href="https://wa.me/32475724889?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20de%20IMBODY%20Pro%20S." target="_blank" rel="noopener" class="co-card anim d3">
+                <div class="co-icon whatsapp">💬</div>
+                <div class="co-text">
+                    <h3>WhatsApp</h3>
+                    <p class="co-value">Chat direct met ons</p>
+                    <p>Snelste reactie</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 3. CONTACT FORM -->
+<section class="contact-form">
+    <div class="ctn">
+        <div class="cf-card" id="contactForm">
+            <div class="f-fields">
+                <h2>Stuur ons een bericht</h2>
+                <p class="cf-sub">We reageren binnen 24 uur op werkdagen.</p>
+
+                <label for="cf-name">Naam</label>
+                <input type="text" id="cf-name" name="name" placeholder="Je volledige naam" required>
+
+                <label for="cf-email">E-mailadres</label>
+                <input type="email" id="cf-email" name="email" placeholder="jan@voorbeeld.be" required>
+
+                <label for="cf-subject">Onderwerp</label>
+                <select id="cf-subject" name="subject" required>
+                    <option value="" disabled selected>Waar gaat je vraag over?</option>
+                    <option value="product">Product vraag</option>
+                    <option value="bestelling">Bestelling & levering</option>
+                    <option value="demo">Demo informatie</option>
+                    <option value="samenwerking">Samenwerking / Partnership</option>
+                    <option value="pers">Pers & media</option>
+                    <option value="anders">Anders</option>
+                </select>
+
+                <label for="cf-msg">Bericht</label>
+                <textarea id="cf-msg" name="message" placeholder="Schrijf hier je vraag of opmerking..." required></textarea>
+
+                <button type="button" onclick="submitContact()">
+                    Verstuur bericht
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                </button>
+
+                <p class="cf-note">🔒 Je gegevens worden niet gedeeld met derden.</p>
+            </div>
+
+            <!-- SUCCESS STATE -->
+            <div class="f-success">
+                <div class="s-ico">✅</div>
+                <h3>Bericht verstuurd!</h3>
+                <p>Bedankt voor je bericht. We reageren binnen 24 uur op werkdagen.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. QUICK LINKS -->
+<section class="quick-links">
+    <div class="ctn">
+        <p class="ql-title anim">Misschien vind je hier al je antwoord</p>
+        <div class="ql-grid">
+            <a href="https://rokume225.wixstudio.com/website#faq" class="ql-card anim d1">
+                <div class="ql-ico">❓</div>
+                <h3>Veelgestelde vragen</h3>
+                <p>Antwoorden op de meest gestelde vragen</p>
+            </a>
+            <a href="https://rokume225.wixstudio.com/website/demo" class="ql-card anim d2">
+                <div class="ql-ico">📅</div>
+                <h3>Boek een demo</h3>
+                <p>Gratis demo van 30 minuten</p>
+            </a>
+            <a href="https://rokume225.wixstudio.com/website/shop" class="ql-card anim d3">
+                <div class="ql-ico">🛒</div>
+                <h3>Bekijk de shop</h3>
+                <p>Prijs en bestelinfo</p>
+            </a>
+            <a href="https://rokume225.wixstudio.com/website/blog" class="ql-card anim d4">
+                <div class="ql-ico">📖</div>
+                <h3>Lees onze blog</h3>
+                <p>Tips en inzichten</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/32475724889?text=Hallo%2C%20ik%20heb%20een%20vraag%20over%20de%20IMBODY%20Pro%20S." target="_blank" rel="noopener" class="wa" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16.004 0h-.008C7.174 0 0 7.176 0 16c0 3.5 1.132 6.742 3.052 9.376L1.054 31.4l6.26-1.964C9.87 31.076 12.832 32 16.004 32 24.826 32 32 24.822 32 16S24.826 0 16.004 0zm9.342 22.616c-.396 1.116-2.316 2.136-3.192 2.268-.876.132-2.004.192-3.228-.204-.744-.24-1.704-.564-2.928-1.104-5.148-2.268-8.508-7.476-8.76-7.824-.252-.348-2.064-2.748-2.064-5.244s1.308-3.72 1.776-4.224c.468-.504.984-.624 1.32-.624.336 0 .66 0 .96.012.3.012.708-.12 1.104.84.396.96 1.356 3.3 1.476 3.54.12.24.192.528.036.852-.156.324-.24.528-.468.804s-.48.624-.684.84c-.228.228-.468.48-.204.936.264.456 1.188 1.956 2.544 3.168 1.74 1.548 3.216 2.028 3.672 2.256.456.228.72.192.984-.12.264-.312 1.14-1.332 1.44-1.788.3-.456.612-.384 1.02-.228.408.156 2.616 1.236 3.06 1.464.456.228.756.336.864.528.12.18.12 1.068-.276 2.184z"/></svg>
+</a>
+
+<!-- FOOTER -->
+<footer>
+    <div class="ctn">
+        <div class="ft-top">
+            <img src="https://static.wixstatic.com/media/ab7bd6_cc377aaa10724f99b87c1a0b80df068d~mv2.png/v1/fill/w_200,h_37,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/imbody_logo_400px%201%20(2).png" alt="IMBODY" class="ft-logo">
+            <div class="ft-soc"><a href="#">📷</a><a href="#">💼</a><a href="#">🎵</a></div>
+        </div>
+        <p class="ft-tag">Smart gym systemen in België en Nederland</p>
+        <div class="ft-grid">
+            <a href="https://rokume225.wixstudio.com/website">Home</a>
+            <a href="https://rokume225.wixstudio.com/website/shop">Shop</a>
+            <a href="https://rokume225.wixstudio.com/website/demo">Demo</a>
+            <a href="https://rokume225.wixstudio.com/website/blog">Blog</a>
+            <a href="mailto:info@imbodybe.com">Contact</a>
+            <a href="#">Kinesisten</a>
+            <a href="#">Fitness & PT</a>
+            <a href="#">Bedrijven</a>
+            <a href="#">Privacy</a>
+        </div>
+        <p class="ft-email">✉️ info@imbodybe.com · 📱 +32 475 72 48 89</p>
+        <div class="ft-btm">
+            <span>© 2025 IMBODY BE</span>
+            <div style="display:flex;gap:12px"><a href="#">Privacy</a><a href="#">Voorwaarden</a><a href="#">Cookies</a></div>
+        </div>
+    </div>
+</footer>
+
+<!-- JS -->
+<script>
+function openNav(){document.getElementById('mNav').classList.add('open');document.body.style.overflow='hidden';}
+function closeNav(){document.getElementById('mNav').classList.remove('open');document.body.style.overflow='';}
+
+// Scroll animations
+const aObs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('v');aObs.unobserve(el.target);}});},{threshold:.1,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.anim').forEach(el=>aObs.observe(el));
+
+// Form submit
+function submitContact(){
+    const form=document.getElementById('contactForm');
+    const required=form.querySelectorAll('[required]');
+    let ok=true;
+
+    required.forEach(inp=>{
+        if(!inp.value||inp.value===''){
+            inp.style.borderColor='#ff4444';
+            ok=false;
+        }else{
+            inp.style.borderColor='';
+        }
+    });
+    if(!ok) return;
+
+    // Collect data
+    const data={};
+    form.querySelectorAll('input,select,textarea').forEach(el=>{
+        if(el.name) data[el.name]=el.value;
+    });
+
+    // Show success
+    form.classList.add('done');
+    window.scrollTo({top:form.offsetTop-100,behavior:'smooth'});
+
+    // Log + TODO: send to CRM
+    console.log('Contact form:',data);
+
+    // Mailto fallback
+    const subject=encodeURIComponent('Website contact: '+data.subject+' — '+data.name);
+    const body=encodeURIComponent(
+        'Naam: '+data.name+
+        '\nEmail: '+data.email+
+        '\nOnderwerp: '+data.subject+
+        '\n\nBericht:\n'+data.message
+    );
+    const iframe=document.createElement('iframe');
+    iframe.style.display='none';
+    iframe.src='mailto:info@imbodybe.com?subject='+subject+'&body='+body;
+    document.body.appendChild(iframe);
+    setTimeout(()=>iframe.remove(),2000);
+}
+</script>
+</body>
+</html>
